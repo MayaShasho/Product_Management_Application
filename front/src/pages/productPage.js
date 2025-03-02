@@ -7,10 +7,10 @@ import {
     deleteProduct,
     updateProduct,
 } from '../services/productService';
-import ProductEditModal from '../components/productEditModal';
+import EditProductModal from '../components/editProductModal';
 import useDebounce from '../hooks/useDebounce';
 import ProductList from '../components/productList';
-import AddProduct from '../components/addProduct';
+import AddProductModal from '../components/addProductModal';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import Pagination from '../components/pagination';
@@ -23,7 +23,7 @@ function ProductPage() {
     const [searchQuery, setSearchQuery] = useState('');
     const [editProduct, setEditProduct] = useState(null);
     const debouncedSearchQuery = useDebounce(searchQuery, 500);
-
+    const [isAddProduct, setIsAddProduct] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const productsPerPage = 5;
@@ -74,9 +74,11 @@ function ProductPage() {
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
             icon: 'warning',
+            iconColor: '#2C3930',
+            color: '#2C3930',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
+            confirmButtonColor: '#6a8b75',
+            cancelButtonColor: '#aa4444',
             confirmButtonText: 'Yes, delete it!',
         });
 
@@ -122,7 +124,12 @@ function ProductPage() {
                     className="search-bar"
                 />
             </div>
-            <AddProduct onAdd={handleCreateProduct} />
+            <button
+                onClick={() => setIsAddProduct(true)}
+                className="add-product-btn btn"
+            >
+                + Add New Product
+            </button>
             <ProductList
                 products={products}
                 loading={loadingProducts}
@@ -139,10 +146,16 @@ function ProductPage() {
             />
 
             {editProduct && (
-                <ProductEditModal
+                <EditProductModal
                     product={editProduct}
                     onUpdate={handleUpdateProduct}
                     onClose={() => setEditProduct(null)}
+                />
+            )}
+            {isAddProduct && (
+                <AddProductModal
+                    onSubmit={handleCreateProduct}
+                    onClose={() => setIsAddProduct(false)}
                 />
             )}
         </div>

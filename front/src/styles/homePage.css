@@ -19,6 +19,16 @@
     
 }
 
+.home-container p {
+    font-size: 32px;
+}
+.home-container h1 {
+    font-size: 56px;
+}
+
+.home-container a button {
+    font-size: 24px;
+}
 
 @media (max-width: 768px) {
     .home-container {
@@ -31,5 +41,16 @@
 
     h1 {
         font-size: 30px;
+    }
+
+    .home-container p {
+        font-size: 18px;
+    }
+    .home-container h1 {
+        font-size: 32px;
+    }
+
+    .home-container a button {
+        font-size: 16px;
     }
 }

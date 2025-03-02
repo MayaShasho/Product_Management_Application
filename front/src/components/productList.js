@@ -1,6 +1,9 @@
 import '../styles/productsTable.css';
 import React from 'react';
 import { formatDate } from '../utils/formatDate.js';
+import { LuChevronUp } from 'react-icons/lu';
+import { LuChevronDown } from 'react-icons/lu';
+import { LuChevronsUpDown } from 'react-icons/lu';
 
 const ProductList = ({
     products,
@@ -17,27 +20,30 @@ const ProductList = ({
 
     const getSortIcon = (column) => {
         if (sortBy === column) {
-            return order === 'asc' ? '🔼' : '🔽';
+            return order === 'asc' ? <LuChevronUp /> : <LuChevronDown />;
         }
-        return '🔽';
+        return <LuChevronsUpDown />;
     };
 
     return (
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th className="sortable" onClick={() => onSort('price')}>
+                    <th className="name-column">Name</th>
+                    <th className="description-column">Description</th>
+                    <th
+                        className="price-column"
+                        onClick={() => onSort('price')}
+                    >
                         Price {getSortIcon('price')}
                     </th>
                     <th
-                        className="sortable"
+                        className="created-at-column"
                         onClick={() => onSort('created_at')}
                     >
                         Created At {getSortIcon('created_at')}
                     </th>
-                    <th>Actions</th>
+                    <th className="action-column">Actions</th>
                 </tr>
             </thead>
             <tbody>

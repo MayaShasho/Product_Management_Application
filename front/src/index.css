@@ -1,3 +1,13 @@
+:root {
+  --primary-color: #2C3930;
+  --edit-btn-color: #6a8b75;
+  --delete-btn-color: #aa4444;
+  --secondary-color: #ffc8c8;
+  --active-page-color: #f3a0a0;
+
+
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,8 +27,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-height: 100dvh;
   background-color: #f9fafb;
-  color: var(--gray-800);
   line-height: 1.5;
+  color: var(--primary-color);
 }
 
 code {
@@ -41,7 +51,7 @@ button:not(:disabled):hover {
 }
 
 ::selection {
-  color:  #007bff;
-  background: rgb(214, 214, 214);
+  color:  var(--secondary-color);
+  background: var(--primary-color)
 }
 

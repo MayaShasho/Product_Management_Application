@@ -23,7 +23,7 @@ function LoginPage({ setIsToken }) {
 
     return (
         <div className="auth-container">
-            <h2>Login</h2>
+            <h2 className="header">Login</h2>
             {error && <p className="error">{error}</p>}
             <form onSubmit={handleLogin}>
                 <input
@@ -41,7 +41,7 @@ function LoginPage({ setIsToken }) {
                     required
                 />
                 <button type="submit" className="btn">
-                    Login
+                    Submit
                 </button>
             </form>
         </div>

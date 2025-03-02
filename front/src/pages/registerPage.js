@@ -16,13 +16,13 @@ function RegisterPage() {
             await registerUser(name, email, password);
             navigate('/login');
         } catch (err) {
-            setError(err);
+            setError(err.message);
         }
     };
 
     return (
         <div className="auth-container">
-            <h2>Register</h2>
+            <h2 className="header">Register</h2>
             {error && <p className="error">{error}</p>}
             <form onSubmit={handleRegister}>
                 <input
@@ -47,7 +47,7 @@ function RegisterPage() {
                     required
                 />
                 <button type="submit" className="btn">
-                    Register
+                    Submit
                 </button>
             </form>
         </div>
