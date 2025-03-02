@@ -10,4 +10,9 @@
     color: white;
     text-decoration: none;
     margin: 0 10px;
+
+}
+
+.navbar-links-container{
+    align-content: center;
 }

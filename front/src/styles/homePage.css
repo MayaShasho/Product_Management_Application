@@ -1,11 +1,15 @@
-.home-container {
-    text-align: center;
-    padding: 50px;
+.body-container {
+    background: #cbcbcb;
+    display: flex;
+    flex: 1;
 }
 
-.btn {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+
+.home-container {
+    text-align: center;
+    padding: 90px;
+    background-color: rgb(255, 255, 255);
+    margin: 90px;
+    border-radius: 10px;
+    flex: 1;
 }

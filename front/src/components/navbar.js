@@ -1,5 +1,5 @@
-import React from 'react';
 import '../styles/navbar.css';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Navbar({ isToken, setIsToken }) {
@@ -11,7 +11,7 @@ function Navbar({ isToken, setIsToken }) {
     return (
         <nav className="navbar">
             <h2>Product App</h2>
-            <div>
+            <div className="navbar-links-container">
                 <Link to="/">Home</Link>
                 {isToken ? (
                     <Link to="/" onClick={logOut}>
