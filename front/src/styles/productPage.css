@@ -1,0 +1,102 @@
+.product-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.logout-btn {
+    background: red;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.product-form {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.product-form input {
+    margin: 5px;
+    padding: 8px;
+    width: 200px;
+}
+
+.product-form .btn {
+    margin: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background: #007bff;
+    color: white;
+}
+
+.delete-btn {
+    height:25px;
+    width:50px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.page-btn {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+.page-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.edit-btn {
+    height:25px;
+    width:50px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+}
+.sortable {
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+}
+
+.sortable::after {
+    margin-left: 5px;
+    font-size: 14px;
+}
