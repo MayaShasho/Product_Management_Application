@@ -1,5 +1,7 @@
 # Product Management Application
 
+This project is a Full-Stack Product Management Application that enables users to manage products with authentication, CRUD operations, full-text search using MongoDB, sorting, and pagination.
+
 This is a **Full-Stack Product Management Application** built with:
 
 -   **Backend**: Node.js, Express, MySQL, MongoDB
@@ -85,3 +87,27 @@ npm start
 ```
 
 Frontend will be available at: http://localhost:3000
+
+## How to Test the Application
+
+### Test Backend with Postman
+
+    Start the Backend (npm start)
+    Use Postman to Test APIs:
+        POST /api/auth/register → Register a new user
+        POST /api/auth/login → Get JWT Token
+        GET /api/products → Get all products
+        POST /api/products → Add a product
+        PUT /api/products/:id → Update a product
+        DELETE /api/products/:id → Delete a product
+        GET /api/products/search?query=? → Search for products by name or description
+
+### Test Frontend
+
+    Run Frontend (npm start)
+    Open http://localhost:3000 in browser
+    Login & Try Product CRUD
+
+## Author
+
+-   [@Maya Shasho](https://github.com/MayaShasho)
