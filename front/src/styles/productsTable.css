@@ -1,0 +1,61 @@
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding-inline: 5px;
+    border: 1px solid #ddd;
+}
+
+th {
+    padding: 5px;
+    background: #007bff;
+    color: white;
+    font-size: 18px;
+}
+
+.delete-btn {
+    background: red;
+}
+
+.edit-btn {
+    background-color: #007bff;
+
+}
+.sortable {
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+}
+
+.sortable::after {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.delete-btn, .edit-btn {
+    height:25px;
+    width: 55px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 16px;
+
+}
+
+
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+    th {
+        font-size: inherit;
+    }
+    .delete-btn, .edit-btn {
+        font-size: inherit;
+        margin: 5px 2px;
+    }
+}

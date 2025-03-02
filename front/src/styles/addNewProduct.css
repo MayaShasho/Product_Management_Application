@@ -1,0 +1,95 @@
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.card-header {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.product-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5rem;
+}
+
+
+.add-product-label {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+.form-label {
+    font-weight: 500;
+    color: #374151;
+    text-align: left;
+}
+
+.form-input {
+    padding: 0.625rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.product-form input {
+    padding: 8px;
+    width: 100%;
+}
+
+.product-form .btn {
+    margin: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    grid-column: 1;
+    width: fit-content;
+}
+
+.btn {
+    padding: 0.625rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+
+@media (max-width: 768px) {
+    .product-form {
+        grid-template-columns: 1fr;
+    }
+}

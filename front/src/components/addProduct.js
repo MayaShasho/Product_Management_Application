@@ -1,3 +1,4 @@
+import '../styles/addNewProduct.css';
 import React, { useState } from 'react';
 
 const AddProduct = ({ onAdd }) => {
@@ -14,44 +15,72 @@ const AddProduct = ({ onAdd }) => {
     };
 
     return (
-        <form className="product-form" onSubmit={handleSubmit}>
-            <input
-                type="text"
-                placeholder="Name"
-                value={newProduct.name}
-                onChange={(e) =>
-                    setNewProduct({ ...newProduct, name: e.target.value })
-                }
-                required
-            />
-            <input
-                type="text"
-                placeholder="Description"
-                value={newProduct.description}
-                onChange={(e) =>
-                    setNewProduct({
-                        ...newProduct,
-                        description: e.target.value,
-                    })
-                }
-                required
-            />
-            <input
-                type="number"
-                placeholder="Price"
-                value={newProduct.price}
-                onChange={(e) =>
-                    setNewProduct({
-                        ...newProduct,
-                        price: parseFloat(e.target.value) || '',
-                    })
-                }
-                required
-            />
-            <button type="submit" className="btn">
-                Create Product
-            </button>
-        </form>
+        <div className="card">
+            <div className="card-header">
+                <h2 className="card-title">Add New Product</h2>
+            </div>
+            <form onSubmit={handleSubmit}>
+                <div className="product-form">
+                    <div className="form-group">
+                        <label for="name" className="form-label">
+                            Name
+                        </label>
+                        <input
+                            className="form-input"
+                            type="text"
+                            placeholder="Name"
+                            value={newProduct.name}
+                            onChange={(e) =>
+                                setNewProduct({
+                                    ...newProduct,
+                                    name: e.target.value,
+                                })
+                            }
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label for="description" className="form-label">
+                            Description
+                        </label>
+                        <input
+                            className="form-input"
+                            type="text"
+                            placeholder="Description"
+                            value={newProduct.description}
+                            onChange={(e) =>
+                                setNewProduct({
+                                    ...newProduct,
+                                    description: e.target.value,
+                                })
+                            }
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label for="price" className="form-label">
+                            Price
+                        </label>
+                        <input
+                            className="form-input"
+                            type="number"
+                            placeholder="Price"
+                            value={newProduct.price}
+                            onChange={(e) =>
+                                setNewProduct({
+                                    ...newProduct,
+                                    price: parseFloat(e.target.value) || '',
+                                })
+                            }
+                            required
+                        />
+                    </div>
+                    <button type="submit" className="btn">
+                        + Create Product
+                    </button>
+                </div>
+            </form>
+        </div>
     );
 };
 

@@ -1,4 +1,5 @@
 import '../styles/productPage.css';
+import '../styles/productSearch.css';
 import React, { useEffect, useState } from 'react';
 import {
     fetchProducts,
@@ -111,14 +112,16 @@ function ProductPage() {
 
     return (
         <div className="product-container">
-            <h2>Product List</h2>
-            <input
-                type="text"
-                placeholder="Search products..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="search-bar"
-            />
+            <h2 className="title">Product List</h2>
+            <div className="search-container">
+                <input
+                    type="text"
+                    placeholder="Search products..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="search-bar"
+                />
+            </div>
             <AddProduct onAdd={handleCreateProduct} />
             <ProductList
                 products={products}

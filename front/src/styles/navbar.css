@@ -1,9 +1,9 @@
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
     background: #007bff;
     color: white;
+    padding: .5rem 2rem;
 }
 
 .navbar a {
@@ -15,4 +15,10 @@
 
 .navbar-links-container{
     align-content: center;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: .5rem;
+        }
 }

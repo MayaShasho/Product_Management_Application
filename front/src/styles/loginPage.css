@@ -3,10 +3,42 @@
     padding: 50px;
 }
 
-input {
-    display: block;
-    margin: 10px auto;
+.auth-container input {
+    margin: auto;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
     padding: 8px;
-    width: 80%;
-    max-width: 300px;
+    margin-bottom: 10px;
+    
+}
+
+.auth-container input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.btn {
+    padding: 0.625rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    display: inline-flex;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    border: none;
+    width: fit-content;
+}
+
+
+
+@media (max-width: 768px) {
+    .product-form {
+        grid-template-columns: 1fr;
+    }
 }

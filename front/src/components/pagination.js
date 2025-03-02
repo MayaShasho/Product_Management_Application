@@ -1,5 +1,5 @@
-import React from 'react';
 import '../styles/pagination.css';
+import React from 'react';
 
 function Pagination({ currentPage, totalPages, onPageChange }) {
     console.log('currentPage', currentPage);

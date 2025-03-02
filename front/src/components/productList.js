@@ -1,3 +1,4 @@
+import '../styles/productsTable.css';
 import React from 'react';
 import { formatDate } from '../utils/formatDate.js';
 

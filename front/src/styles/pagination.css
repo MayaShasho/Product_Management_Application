@@ -25,3 +25,9 @@
     cursor: not-allowed;
 }
 
+
+@media (max-width: 768px) {
+    .pagination button {
+        font-size: 14px;
+    }
+}
