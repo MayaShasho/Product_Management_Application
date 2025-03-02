@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Product Management Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a **Full-Stack Product Management Application** built with:
 
-## Available Scripts
+-   **Backend**: Node.js, Express, MySQL, MongoDB
+-   **Frontend**: React.js
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-   User authentication (Register & Login with JWT)
+-   Product CRUD operations (Create, Read, Update, Delete)
+-   **Search** using MongoDB
+-   **Sorting & Pagination** for better UX
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+### Frontend:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   React.js
+-   React Router
+-   CSS Modules
 
-### `npm run build`
+### Backend:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   Node.js & Express.js
+-   MongoDB & Mongoose
+-   JSON Web Token (JWT) for authentication
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Backend Setup (Node.js + MySQL + MongoDB)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🔹 Install Dependencies
 
-### `npm run eject`
+```
+cd backend
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🔹 Configure Environment Variables
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Add the following environment variables in Render or a .env file locally:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+PORT=5000
+DB_HOST=<your-mysql-host>
+DB_USER=<your-mysql-username>
+DB_PASS=<your-mysql-password>
+DB_NAME=<your-mysql-database>
+DB_PORT=<your-mysql-port>
+MONGO_URI=<your-mongodb-uri>
+JWT_SECRET=<your-jwt-secret>
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 🔹 Run the Backend Locally
 
-## Learn More
+```
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Backend will be available at: http://localhost:5000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Frontend Setup (React.js)
 
-### Code Splitting
+### 🔹 Install Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+cd frontend
+npm install
+```
 
-### Analyzing the Bundle Size
+### 🔹 Configure Environment Variables
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Set the backend URL in a .env file (local) or Render’s environment variables:
 
-### Making a Progressive Web App
+```
+REACT_APP_PRODUCTS_URL="http://localhost:5000/api/products"
+REACT_APP_AUTH_URL="http://localhost:5000/api/auth"
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 🔹 Run the Frontend Locally
 
-### Advanced Configuration
+```
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Frontend will be available at: http://localhost:3000
