@@ -78,7 +78,7 @@ DATABASE_URL=<your-db-url>
 npm start
 ```
 
-Backend will be available at: http://localhost:5000
+Backend will be available at: http://localhost:5000/Product_Management_Application/
 
 ## Frontend Setup (React.js)
 
@@ -94,8 +94,8 @@ npm install
 Set the backend URL in a .env file (local) or Render’s environment variables:
 
 ```
-REACT_APP_PRODUCTS_URL="http://localhost:5000/api/products"
-REACT_APP_AUTH_URL="http://localhost:5000/api/auth"
+REACT_APP_PRODUCTS_URL="http://localhost:5000/Product_Management_Application/products"
+REACT_APP_AUTH_URL="http://localhost:5000/Product_Management_Application/auth"
 ```
 
 ### 🔹 Run the Frontend Locally
