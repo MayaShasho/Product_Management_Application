@@ -47,6 +47,10 @@
   "devDependencies": {
     "gh-pages": "^6.3.0",
     "nodemon": "^3.1.9",
-    "react-error-overlay": "6.0.9"
+    "react-error-overlay": "6.0.9",
+    "webpack": "^4.42.0"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
