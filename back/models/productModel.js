@@ -1,5 +1,4 @@
 import { sqlDb } from '../config/db.js';
-import { getPaginationParams } from '../utils/pagination.js';
 
 class ProductSQL {
     static async createProduct(name, description, price) {
