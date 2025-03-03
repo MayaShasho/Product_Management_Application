@@ -15,14 +15,20 @@ function App() {
         <Router>
             <Navbar isToken={isToken} setIsToken={setIsToken} />
             <Routes>
-                <Route path="/" element={<HomePage />} />
                 <Route
-                    path="/login"
+                    path="/Product_Management_Application/"
+                    element={<HomePage />}
+                />
+                <Route
+                    path="/Product_Management_Application/login"
                     element={<LoginPage setIsToken={setIsToken} />}
                 />
-                <Route path="/register" element={<RegisterPage />} />
                 <Route
-                    path="/products"
+                    path="/Product_Management_Application/register"
+                    element={<RegisterPage />}
+                />
+                <Route
+                    path="/Product_Management_Application/products"
                     element={
                         <ProtectedRoute>
                             <ProductPage />

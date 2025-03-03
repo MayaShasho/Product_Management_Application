@@ -9,10 +9,10 @@ function HomePage() {
                 <h1>Welcome to Product Management App</h1>
                 <p>Manage your products efficiently.</p>
                 <div>
-                    <Link to="/login">
+                    <Link to="/Product_Management_Application/login">
                         <button className="btn">Login</button>
                     </Link>
-                    <Link to="/register">
+                    <Link to="/Product_Management_Application/register">
                         <button className="btn">Register</button>
                     </Link>
                 </div>

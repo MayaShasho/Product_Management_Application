@@ -15,7 +15,7 @@ function LoginPage({ setIsToken }) {
             const token = await loginUser(email, password);
             localStorage.setItem('token', token);
             setIsToken(true);
-            navigate('/products');
+            navigate('/Product_Management_Application/products');
         } catch (err) {
             setError('Login failed. Please check your email and password.');
         }

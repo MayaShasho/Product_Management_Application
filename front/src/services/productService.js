@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const API_URL =
-    process.env.REACT_APP_PRODUCTS_URL || 'http://localhost:5000/products';
+    process.env.REACT_APP_PRODUCTS_URL ||
+    'http://localhost:5000/Product_Management_Application/products';
 
 export const fetchProducts = async (
     token,

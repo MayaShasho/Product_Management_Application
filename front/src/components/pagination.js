@@ -2,8 +2,6 @@ import '../styles/pagination.css';
 import React from 'react';
 
 function Pagination({ currentPage, totalPages, onPageChange }) {
-    console.log('currentPage', currentPage);
-    console.log('totalPages', totalPages);
     if (totalPages <= 1) return null;
 
     return (

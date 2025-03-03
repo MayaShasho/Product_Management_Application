@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const AUTH_URL = process.env.REACT_APP_AUTH_URL || 'http://localhost:5000/auth';
+const AUTH_URL =
+    process.env.REACT_APP_AUTH_URL ||
+    'http://localhost:5000/Product_Management_Application/auth';
 
 export const registerUser = async (name, email, password) => {
     try {

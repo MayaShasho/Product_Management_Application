@@ -14,7 +14,7 @@ function RegisterPage() {
         e.preventDefault();
         try {
             await registerUser(name, email, password);
-            navigate('/login');
+            navigate('/Product_Management_Application/login');
         } catch (err) {
             setError(err.message);
         }
