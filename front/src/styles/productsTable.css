@@ -20,7 +20,6 @@ th {
     font-size: 18px;
 }
 
-/* Apply border-radius only to first and last `td` */
 tr th:first-child, tr td:first-child{
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
@@ -83,16 +82,20 @@ tbody:hover > tr:not(:hover) {
     width: 350px;
 }
 
-
 .description-column {
     width: 800px;
 }
+
 @media (max-width: 768px) {
     table {
-        font-size: 14px;
+        font-size: 13px;
     }
     th {
         font-size: inherit;
+    }
+
+    td {
+        font-size: 12px;
     }
     .delete-btn, .edit-btn {
         font-size: inherit;

@@ -9,6 +9,16 @@ This is a **Full-Stack Product Management Application** built with:
 
 ---
 
+## Deployment Notes
+
+**NOTICE:** The backend is hosted on Render's free tier.  
+This means the instance will **spin down due to inactivity**, which can cause **delays of up to 50 seconds** for the first request.
+
+If you experience slow responses at first, please wait for the instance to wake up.  
+After that, it should perform normally.
+
+---
+
 ## Features
 
 -   User authentication (Register & Login with JWT)
