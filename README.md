@@ -64,6 +64,14 @@ MONGO_URI=<your-mongodb-uri>
 JWT_SECRET=<your-jwt-secret>
 ```
 
+**_If you are using a hosted database like Railway, you need to add:_**
+
+```
+DATABASE_URL=<your-db-url>
+```
+
+**_that contain the hostname, username, password, database, and port_**
+
 ### 🔹 Run the Backend Locally
 
 ```
