@@ -12,7 +12,7 @@ function App() {
     const [isToken, setIsToken] = useState(!!localStorage.getItem('token'));
 
     return (
-        <Router basename={process.env.REACT_APP_BASENAME || '/'}>
+        <Router>
             <Navbar isToken={isToken} setIsToken={setIsToken} />
             <Routes>
                 <Route
