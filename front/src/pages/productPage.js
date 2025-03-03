@@ -46,7 +46,7 @@ function ProductPage() {
                         sortBy,
                         order
                     );
-                fetchedProducts?.length && setProducts(fetchedProducts);
+                setProducts(fetchedProducts);
                 setTotalPages(totalPages || 1);
             } catch (error) {
                 console.error('Error fetching products:', error);
