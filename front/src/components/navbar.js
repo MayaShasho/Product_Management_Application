@@ -12,22 +12,15 @@ function Navbar({ isToken, setIsToken }) {
         <nav className="navbar">
             <h2>Product App</h2>
             <div className="navbar-links-container">
-                <Link to="/Product_Management_Application/">Home</Link>
+                <Link to="/">Home</Link>
                 {isToken ? (
-                    <Link
-                        to="/Product_Management_Application/"
-                        onClick={logOut}
-                    >
+                    <Link to="/" onClick={logOut}>
                         Logout
                     </Link>
                 ) : (
-                    <Link to="/Product_Management_Application/login">
-                        Login
-                    </Link>
+                    <Link to="/login">Login</Link>
                 )}
-                <Link to="/Product_Management_Application/register">
-                    Register
-                </Link>
+                <Link to="/register">Register</Link>
             </div>
         </nav>
     );
