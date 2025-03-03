@@ -1,22 +1,47 @@
 import mysql from 'mysql2/promise';
 
 async function initializeDatabase() {
+    let connectionConfig = {};
+    let isLocal = false;
+
+    if (process.env.DATABASE_URL) {
+        const dbUrl = process.env.DATABASE_URL;
+
+        const { hostname, port, pathname, username, password } = new URL(dbUrl);
+        const database = pathname.replace('/', '');
+
+        connectionConfig = {
+            host: hostname,
+            user: username || 'root',
+            password: password || '',
+            database,
+            port,
+        };
+    } else {
+        isLocal = true;
+
+        connectionConfig = {
+            host: process.env.DB_HOST,
+            user: process.env.DB_USER,
+            password: process.env.DB_PASS,
+            database: process.env.DB_NAME,
+        };
+    }
+
     const connection = await mysql.createConnection({
-        host: process.env.DB_HOST,
-        user: process.env.DB_USER,
-        password: process.env.DB_PASS,
+        host: connectionConfig.host,
+        user: connectionConfig.user,
+        password: connectionConfig.password,
+        port: connectionConfig.port,
     });
 
-    await connection.query(
-        `CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME}`
-    );
+    if (isLocal) {
+        await connection.query(
+            `CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME}`
+        );
+    }
 
-    const sqlDb = await mysql.createConnection({
-        host: process.env.DB_HOST,
-        user: process.env.DB_USER,
-        password: process.env.DB_PASS,
-        database: process.env.DB_NAME,
-    });
+    const sqlDb = await mysql.createConnection(connectionConfig);
 
     await sqlDb.query(`
         CREATE TABLE IF NOT EXISTS users (
