@@ -19,6 +19,15 @@
 
 @media (max-width: 768px) {
     .navbar {
-        padding: .5rem;
-        }
+        padding: .5rem 1rem;
+    }
+
+    .navbar a {
+        margin: 0 8px;
+        font-size: 14px;
+    }
+
+    .navbar h2 {
+        font-size: 18px;
+    }
 }

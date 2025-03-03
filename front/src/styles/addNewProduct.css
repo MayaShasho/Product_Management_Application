@@ -73,4 +73,9 @@
     .product-form {
         grid-template-columns: 1fr;
     }
+
+    .add-product-btn {
+        margin: 0;
+    }
+    
 }

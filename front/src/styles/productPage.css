@@ -8,3 +8,13 @@
     font-weight: 700;
 }
 
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .product-container {
+        padding: 0px;
+    }
+}

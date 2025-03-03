@@ -88,17 +88,33 @@ tbody:hover > tr:not(:hover) {
 
 @media (max-width: 768px) {
     table {
-        font-size: 13px;
+        font-size: 10px;
     }
     th {
         font-size: inherit;
+        
     }
 
     td {
-        font-size: 12px;
+        font-size: 10px;
     }
     .delete-btn, .edit-btn {
         font-size: inherit;
-        margin: 5px 2px;
+        margin: 3px 0.5px;
+        width: 45px;
+
     }
+
+    .name-column {
+        width: fit-content;
+    }
+    
+    .action-column, .created-at-column, .price-column {
+        width: fit-content;
+    }
+    
+    .description-column {
+        width: fit-content;
+    }
+    
 }
