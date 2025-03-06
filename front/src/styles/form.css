@@ -3,6 +3,17 @@
     padding: 50px;
 }
 
+
+.register-form,
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    margin:auto;
+}
+
 .auth-container input {
     margin: auto;
     padding: 0.625rem 0.75rem;
@@ -13,7 +24,7 @@
     padding: 8px;
     margin-bottom: 20px;
     height: 40px;
-    width: min(calc(100% - 24px), 500px);
+    width: 100%;
 }
 
 .auth-container input:focus {
@@ -40,6 +51,10 @@
     width: fit-content;
 }
 
+
+input {
+    padding: 8px;
+}
 
 .auth-container .header {
     font-size: 60px;

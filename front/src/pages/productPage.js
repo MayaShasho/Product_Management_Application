@@ -1,5 +1,3 @@
-import '../styles/productPage.css';
-import '../styles/productSearch.css';
 import React, { useEffect, useState } from 'react';
 import {
     fetchProducts,
