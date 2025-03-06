@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Product_Management_Application/static/css/main.227853ab.chunk.css",
+    "main.css": "/Product_Management_Application/static/css/main.8d8bae46.chunk.css",
     "main.js": "/Product_Management_Application/static/js/main.7b2f3a28.chunk.js",
     "main.js.map": "/Product_Management_Application/static/js/main.7b2f3a28.chunk.js.map",
     "runtime-main.js": "/Product_Management_Application/static/js/runtime-main.be9642fe.js",
@@ -8,15 +8,15 @@
     "static/js/2.3bc19a81.chunk.js": "/Product_Management_Application/static/js/2.3bc19a81.chunk.js",
     "static/js/2.3bc19a81.chunk.js.map": "/Product_Management_Application/static/js/2.3bc19a81.chunk.js.map",
     "index.html": "/Product_Management_Application/index.html",
-    "precache-manifest.0f66f5df545935e6e8806dcf37c9db8a.js": "/Product_Management_Application/precache-manifest.0f66f5df545935e6e8806dcf37c9db8a.js",
+    "precache-manifest.6e641ef8fac90a35f8625e3a9607d7b6.js": "/Product_Management_Application/precache-manifest.6e641ef8fac90a35f8625e3a9607d7b6.js",
     "service-worker.js": "/Product_Management_Application/service-worker.js",
-    "static/css/main.227853ab.chunk.css.map": "/Product_Management_Application/static/css/main.227853ab.chunk.css.map",
+    "static/css/main.8d8bae46.chunk.css.map": "/Product_Management_Application/static/css/main.8d8bae46.chunk.css.map",
     "static/js/2.3bc19a81.chunk.js.LICENSE.txt": "/Product_Management_Application/static/js/2.3bc19a81.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.be9642fe.js",
     "static/js/2.3bc19a81.chunk.js",
-    "static/css/main.227853ab.chunk.css",
+    "static/css/main.8d8bae46.chunk.css",
     "static/js/main.7b2f3a28.chunk.js"
   ]
 }
