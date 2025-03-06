@@ -32,7 +32,7 @@
 .modal-content input {
     display: block;
     width: 90%;
-    margin: 10px auto;
+    margin: 10px 0;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
