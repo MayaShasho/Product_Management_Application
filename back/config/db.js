@@ -16,6 +16,9 @@ async function initializeDatabase() {
             password: password || '',
             database,
             port,
+            ssl: {
+                rejectUnauthorized: false,
+            },
         };
     } else {
         isLocal = true;
@@ -33,6 +36,7 @@ async function initializeDatabase() {
         user: connectionConfig.user,
         password: connectionConfig.password,
         port: connectionConfig.port,
+        ssl: connectionConfig.ssl,
     });
 
     if (isLocal) {
