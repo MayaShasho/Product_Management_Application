@@ -7,17 +7,29 @@ const AddProductModal = ({ onSubmit, onClose }) => {
         description: '',
         price: '',
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await onSubmit(newProduct);
-        setNewProduct({ name: '', description: '', price: '' });
+        try {
+            setIsSubmitting(true);
+            await onSubmit(newProduct);
+            setNewProduct({ name: '', description: '', price: '' });
+        } catch (error) {
+            console.error('Failed to create product:', error);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
-        <div className="modal" onClick={onClose}>
+        <div className="modal" onClick={() => {
+                if (!isSubmitting) {
+                    onClose();
+                }
+            }}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <button className="close-btn" onClick={onClose}>
+                <button className="close-btn" onClick={onClose} disabled={isSubmitting}>
                     <IoClose />
                 </button>
                 <div className="card-header">
@@ -40,6 +52,7 @@ const AddProductModal = ({ onSubmit, onClose }) => {
                                         name: e.target.value,
                                     })
                                 }
+                                disabled={isSubmitting}
                                 required
                             />
                         </div>
@@ -58,6 +71,7 @@ const AddProductModal = ({ onSubmit, onClose }) => {
                                         description: e.target.value,
                                     })
                                 }
+                                disabled={isSubmitting}
                                 required
                             />
                         </div>
@@ -76,11 +90,22 @@ const AddProductModal = ({ onSubmit, onClose }) => {
                                         price: parseFloat(e.target.value) || '',
                                     })
                                 }
+                                disabled={isSubmitting}
                                 required
                             />
                         </div>
-                        <button type="submit" className="btn">
-                            Create Product
+                       <button
+                            type="submit"
+                            className="btn"
+                            disabled={isSubmitting}
+                        >
+                            {isSubmitting && (
+                                <span className="button-spinner" />
+                            )}
+
+                            {isSubmitting
+                                ? 'Creating...'
+                                : 'Create Product'}
                         </button>
                     </div>
                 </form>

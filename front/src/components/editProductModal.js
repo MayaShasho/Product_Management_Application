@@ -7,6 +7,7 @@ function EditProductModal({ product, onUpdate, onClose }) {
         description: product.description,
         price: product.price,
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
         setUpdatedProduct({
@@ -15,15 +16,28 @@ function EditProductModal({ product, onUpdate, onClose }) {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        onUpdate(product.id, updatedProduct);
+
+        try {
+            setIsSubmitting(true);
+
+            await onUpdate(product.id, updatedProduct);
+        } catch (error) {
+            console.error('Failed to update product:', error);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
-        <div className="modal" onClick={onClose}>
+        <div className="modal" onClick={() => {
+                if (!isSubmitting) {
+                    onClose();
+                }
+            }}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <button className="close-btn" onClick={onClose}>
+                <button className="close-btn" onClick={onClose} disabled={isSubmitting}>
                     <IoClose />
                 </button>
                 <div className="card-header">
@@ -40,6 +54,7 @@ function EditProductModal({ product, onUpdate, onClose }) {
                                 name="name"
                                 value={updatedProduct.name}
                                 onChange={handleChange}
+                                disabled={isSubmitting}
                                 required
                             />
                         </div>
@@ -52,6 +67,7 @@ function EditProductModal({ product, onUpdate, onClose }) {
                                 name="description"
                                 value={updatedProduct.description}
                                 onChange={handleChange}
+                                disabled={isSubmitting}
                                 required
                             />
                         </div>
@@ -64,11 +80,20 @@ function EditProductModal({ product, onUpdate, onClose }) {
                                 name="price"
                                 value={updatedProduct.price}
                                 onChange={handleChange}
+                                disabled={isSubmitting}
                                 required
                             />
                         </div>
-                        <button type="submit" className="btn">
-                            Update
+                        <button
+                            type="submit"
+                            className="btn"
+                            disabled={isSubmitting}
+                        >
+                            {isSubmitting && (
+                                <span className="button-spinner" />
+                            )}
+
+                            {isSubmitting ? 'Updating...' : 'Update'}
                         </button>
                     </div>
                 </form>
