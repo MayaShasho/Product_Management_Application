@@ -47,6 +47,7 @@ export const deleteProduct = async (token, productId) => {
         });
     } catch (error) {
         console.error('Error deleting product:', error);
+        throw error;
     }
 };
 

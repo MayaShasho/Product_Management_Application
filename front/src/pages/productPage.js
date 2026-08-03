@@ -68,7 +68,7 @@ function ProductPage() {
     };
 
     const handleDeleteProduct = async (id) => {
-        const result = await MySwal.fire({
+        await MySwal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
             icon: 'warning',
@@ -78,14 +78,23 @@ function ProductPage() {
             confirmButtonColor: '#6a8b75',
             cancelButtonColor: '#aa4444',
             confirmButtonText: 'Yes, delete it!',
-        });
 
-        if (result.isConfirmed) {
-            setSearchQuery('');
-            setCurrentPage(1);
-            await deleteProduct(token, id);
-            loadProducts();
-        }
+            showLoaderOnConfirm: true,
+            allowOutsideClick: () => !Swal.isLoading(),
+            preConfirm: async () => {
+                try {
+                    setSearchQuery('');
+                    setCurrentPage(1);
+
+                    await deleteProduct(token, id);
+                    await loadProducts();
+                } catch (error) {
+                    Swal.showValidationMessage(
+                        'Failed to delete product. Please try again.'
+                    );
+                }
+            },
+        });
     };
 
     const handleUpdateProduct = async (id, updatedProduct) => {
