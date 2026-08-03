@@ -88,6 +88,7 @@ tbody:hover > tr:not(:hover) {
 @media (max-width: 768px) {
     table {
         font-size: 10px;
+        padding-inline: 10px;
     }
     th {
         font-size: inherit;
