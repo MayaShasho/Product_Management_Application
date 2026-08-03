@@ -77,11 +77,24 @@ export const deleteProduct = async (req, res, next) => {
         const { id } = req.params;
 
         const deletedRows = await ProductSQL.deleteProduct(id);
+
         if (deletedRows === 0) {
-            return res.status(404).json({ error: 'Product not found' });
+            return res.status(404).json({
+                error: 'Product not found',
+            });
         }
 
-        await ProductMongo.findOneAndDelete({ mysqlId: id });
+        try {
+            await ProductMongo.findOneAndDelete({
+                mysqlId: Number(id),
+            });
+        } catch (mongoError) {
+            console.error(
+                'Failed to delete product from MongoDB:',
+                mongoError.message
+            );
+        }
+
         res.json({ message: 'Product deleted' });
     } catch (error) {
         next(error);
